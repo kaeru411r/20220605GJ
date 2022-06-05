@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4426274197689089741
+--- !u!1 &627217596067673008
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4426274197689089736}
-  - component: {fileID: 4426274197689089743}
-  - component: {fileID: 4426274197689089742}
-  - component: {fileID: 1976745098018944728}
-  - component: {fileID: 1976745098018944729}
+  - component: {fileID: 627217596067673013}
+  - component: {fileID: 627217596067673010}
+  - component: {fileID: 627217596067673011}
+  - component: {fileID: 3366393216825375653}
+  - component: {fileID: 3366393216825375652}
   m_Layer: 0
   m_Name: FlowerPot
   m_TagString: Untagged
@@ -20,29 +20,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4426274197689089736
+--- !u!4 &627217596067673013
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4426274197689089741}
+  m_GameObject: {fileID: 627217596067673008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.08, y: 1.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2066364216398911534}
+  - {fileID: 2987057208338535763}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4426274197689089743
+--- !u!212 &627217596067673010
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4426274197689089741}
+  m_GameObject: {fileID: 627217596067673008}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -88,55 +88,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4426274197689089742
+--- !u!114 &627217596067673011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4426274197689089741}
+  m_GameObject: {fileID: 627217596067673008}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa1f2a2b79bb53948b06fe36d8da9414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _growthPointLimit:
+  _growth:
   - _level: Level1
-    _growthPoint: 1
+    _miniGrowthPoint: 1
+    _maxGrowthPoint: 3
     _flower: {fileID: 21300000, guid: 21f2fa9f895a403488d485372f3d2b2f, type: 3}
   - _level: Level2
-    _growthPoint: 3
+    _miniGrowthPoint: 3
+    _maxGrowthPoint: 5
     _flower: {fileID: 21300000, guid: 870052d84a08c3e40b8d416e0ac553fe, type: 3}
   - _level: Level3
-    _growthPoint: 6
+    _miniGrowthPoint: 5
+    _maxGrowthPoint: 7
     _flower: {fileID: 21300000, guid: 57b62ecf38fd714479a146bc6508d4f4, type: 3}
   - _level: Level4
-    _growthPoint: 10
+    _miniGrowthPoint: 7
+    _maxGrowthPoint: 9
     _flower: {fileID: 21300000, guid: 2f9978445b542e04ea14d8f98628547e, type: 3}
   - _level: Level5
-    _growthPoint: 15
+    _miniGrowthPoint: 9
+    _maxGrowthPoint: 11
     _flower: {fileID: 21300000, guid: e446df9109223a0438b0084e18cdb1f3, type: 3}
   - _level: Level6
-    _growthPoint: 21
+    _miniGrowthPoint: 11
+    _maxGrowthPoint: 14
     _flower: {fileID: 21300000, guid: 3d0a7687698ead541a2de58916a9d60b, type: 3}
   - _level: Level7
-    _growthPoint: 27
+    _miniGrowthPoint: 14
+    _maxGrowthPoint: 17
     _flower: {fileID: 21300000, guid: b51ad2c4a59e49a46a1d574b9681d5c9, type: 3}
   - _level: Level8
-    _growthPoint: 35
+    _miniGrowthPoint: 17
+    _maxGrowthPoint: 20
     _flower: {fileID: 21300000, guid: cb2e786b78bb96c4d8b18ad78d1d66ae, type: 3}
   _growthPoint: 0
-  _flowerPos: {fileID: 2865786549742805365}
+  _flowerPos: {fileID: 1304999716773424136}
   _rainTag: 
-  _flowerPotPrefab: {fileID: 4426274197689089741}
---- !u!50 &1976745098018944728
+  _soil: {fileID: 21300000, guid: 93d190b6b92165f4b87bba12c521d27d, type: 3}
+  _flowerPotPrefab: {fileID: 627217596067673008}
+  _interver: 0.1
+--- !u!50 &3366393216825375653
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4426274197689089741}
+  m_GameObject: {fileID: 627217596067673008}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -150,17 +160,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &1976745098018944729
+--- !u!61 &3366393216825375652
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4426274197689089741}
+  m_GameObject: {fileID: 627217596067673008}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -176,7 +186,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &4711986896806262595
+--- !u!1 &8411964225021180478
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,8 +194,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2066364216398911534}
-  - component: {fileID: 2865786549742805365}
+  - component: {fileID: 2987057208338535763}
+  - component: {fileID: 1304999716773424136}
   m_Layer: 0
   m_Name: Flower
   m_TagString: Untagged
@@ -193,28 +203,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2066364216398911534
+--- !u!4 &2987057208338535763
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4711986896806262595}
+  m_GameObject: {fileID: 8411964225021180478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4426274197689089736}
+  m_Father: {fileID: 627217596067673013}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2865786549742805365
+--- !u!212 &1304999716773424136
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4711986896806262595}
+  m_GameObject: {fileID: 8411964225021180478}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
