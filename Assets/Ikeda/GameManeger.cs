@@ -10,14 +10,14 @@ public class GameManeger
     /// <summary>
     /// ゲームスタート時に呼ぶ
     /// </summary>
-    public void GameStart()
+    public IEnumerator GameStart()
     {
+        yield return null;
         GameObject.FindObjectOfType<TimerScript>().TimerStart();
-        var go =  GameObject.FindObjectOfType<Generator>();
+        var go = GameObject.FindObjectOfType<Generator>();
         go.GameStart();
 
         Debug.Log(go);
-
     }
 
     /// <summary>

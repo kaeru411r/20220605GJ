@@ -9,11 +9,13 @@ public class Falls : MonoBehaviour
     {
         Destroy(gameObject, time);
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag != gameObject.tag)
+        {
             Destroy(gameObject);
-
+        }
     }
-       
+
 
 }

@@ -21,6 +21,10 @@ public class TimerScript : MonoBehaviour
         if (_isPlay)
         {
             m_limitTime -= Time.deltaTime;
+            if(m_limitTime < 0)
+            {
+                GameManeger.Instance.GameClear();
+            }
         }
         m_timeText.text = m_limitTime.ToString("F2");
     }

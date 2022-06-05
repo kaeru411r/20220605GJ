@@ -9,30 +9,27 @@ public class SceneManager : MonoBehaviour
     static public SceneManager Instance;
 
     /// <summary>タイトルシーン</summary>
-    Scene _titleScene;
+    int _titleScene = 0;
     /// <summary>ゲームシーン</summary>
-    Scene _gameScene;
+    int _gameScene = 1;
     /// <summary>リザルトシーン</summary>
-    Scene _resultScene;
+    int _resultScene = 2;
     /// <summary>現在のシーン</summary>
-    Scene _nowScene;
+    int _nowScene;
 
 
     private void Awake()
     {
         if (Instance != null)
         {
-            Instance = this;
             Destroy(gameObject);
         }
+        Instance = this;
         DontDestroyOnLoad(this);
     }
-
-    private void Start()
+    
+    private void Aw()
     {
-        _titleScene = UnityEngine.SceneManagement.SceneManager.GetSceneByBuildIndex(0);
-        _gameScene = UnityEngine.SceneManagement.SceneManager.GetSceneByBuildIndex(1);
-        _resultScene = UnityEngine.SceneManagement.SceneManager.GetSceneByBuildIndex(2);
     }
 
     /// <summary>
@@ -40,7 +37,7 @@ public class SceneManager : MonoBehaviour
     /// </summary>
     public void TitleScene()
     {
-        SceneChange(_titleScene.buildIndex);
+        SceneChange(_titleScene);
     }
 
     /// <summary>
@@ -48,8 +45,9 @@ public class SceneManager : MonoBehaviour
     /// </summary>
     public void GameScene()
     {
-        SceneChange(_gameScene.buildIndex);
-        GameManeger.Instance.GameStart();
+        Debug.Log(_gameScene);
+        SceneChange(_gameScene);
+        StartCoroutine( GameManeger.Instance.GameStart());
     }
 
     /// <summary>
@@ -57,7 +55,7 @@ public class SceneManager : MonoBehaviour
     /// </summary>
     public void ResultScene()
     {
-        SceneChange(_resultScene.buildIndex);
+        SceneChange(_resultScene);
     }
 
     /// <summary>
@@ -65,12 +63,12 @@ public class SceneManager : MonoBehaviour
     /// </summary>
     public void ReLoad()
     {
-        if(_nowScene == _gameScene)
+        if (_nowScene == _gameScene)
         {
             GameScene();
             return;
         }
-        SceneChange(_nowScene.buildIndex);
+        SceneChange(_nowScene);
     }
 
     /// <summary>
@@ -79,6 +77,6 @@ public class SceneManager : MonoBehaviour
     void SceneChange(int value)
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(value);
-        _nowScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+        _nowScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
     }
 }
