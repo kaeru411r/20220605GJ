@@ -7,6 +7,9 @@ public class Generator : MonoBehaviour
     [SerializeField] GameObject fall;
     [SerializeField] float rightArea;
     [SerializeField] float leftArea;
+    [SerializeField] float height;
+    [SerializeField] float maxCT;
+    float coolTime = 0;
     private bool isPlay;
 
     // Start is called before the first frame update
@@ -23,10 +26,18 @@ public class Generator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(isPlay)
         {
-            float x = Random.Range(-8.0f,8.0f);
-            float y = 5f;
+            coolTime -= Time.deltaTime;
+            if(coolTime <= 0)
+            {
+                float x = Random.Range(leftArea, rightArea);
+                Instantiate(fall, new Vector3(x, height), Quaternion.identity);
+                coolTime = Random.Range(0, maxCT);
+            }
+            
+            
         }
     }
 }
