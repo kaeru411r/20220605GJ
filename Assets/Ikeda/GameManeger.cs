@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class GameManeger
 {
-    static private GameManeger _instance = new GameManeger();
-    private GameManeger() { }
-    static public GameManeger Instance => _instance;
+    static public GameManeger Instance = new GameManeger();
 
     public void GameStart()
     {
-
+        GameObject.FindObjectOfType<TimerScript>().TimerStart();
     }
 
     public void GameRestart()
@@ -30,7 +28,7 @@ public class GameManeger
 
     public void CloseApplication()
     {
-
+        UnityEngine.Application.Quit();
     }
 
 }
