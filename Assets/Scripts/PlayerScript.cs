@@ -10,11 +10,11 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Move();
     }
@@ -25,11 +25,13 @@ public class PlayerScript : MonoBehaviour
 
         if (x > 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-0.5f, 1, 1);
+            Debug.Log("right");
         }
         else if (x < 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(0.5f, 1, 1);
+            Debug.Log("left");
         }
 
         rb.velocity = new Vector2(x * moveSpeed, rb.velocity.y);
