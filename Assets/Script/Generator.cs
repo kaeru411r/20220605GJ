@@ -15,18 +15,17 @@ public class Generator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isPlay = false;
     }
     public void GameStart()
     {
         isPlay = true;
-
+        Debug.Log(2);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(isPlay);
         if(isPlay)
         {
             coolTime -= Time.deltaTime;

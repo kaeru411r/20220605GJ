@@ -25,12 +25,14 @@ public class PlayerScript : MonoBehaviour
 
         if (x > 0)
         {
-            transform.localScale = new Vector3(-0.5f, 1, 1);
+            var lS = transform.localScale;
+            transform.localScale = new Vector3(Mathf.Abs(lS.x), lS.y, lS.z);
             Debug.Log("right");
         }
         else if (x < 0)
         {
-            transform.localScale = new Vector3(0.5f, 1, 1);
+            var lS = transform.localScale;
+            transform.localScale = new Vector3(-Mathf.Abs(lS.x), lS.y, lS.z);
             Debug.Log("left");
         }
 

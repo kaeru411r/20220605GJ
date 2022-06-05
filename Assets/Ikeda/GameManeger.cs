@@ -13,6 +13,11 @@ public class GameManeger
     public void GameStart()
     {
         GameObject.FindObjectOfType<TimerScript>().TimerStart();
+        var go =  GameObject.FindObjectOfType<Generator>();
+        go.GameStart();
+
+        Debug.Log(go);
+
     }
 
     /// <summary>

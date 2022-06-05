@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4426274197689089741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.173913, y: 2.173913, z: 2.173913}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2066364216398911534}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 97daec29f1805e74599a6638fcb428c1, type: 3}
   m_Color: {r: 0.7169812, g: 0.27161092, b: 0.08387324, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,35 +100,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1f2a2b79bb53948b06fe36d8da9414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _growthPointLimit:
-  - _level: Level1
-    _growthPoint: 1
+  _growth:
+  - _level: level1
+    _miniGrowthPoint: 1
+    _maxGrowthPoint: 3
     _flower: {fileID: 21300000, guid: 21f2fa9f895a403488d485372f3d2b2f, type: 3}
-  - _level: Level2
-    _growthPoint: 3
+  - _level: level2
+    _miniGrowthPoint: 3
+    _maxGrowthPoint: 5
     _flower: {fileID: 21300000, guid: 870052d84a08c3e40b8d416e0ac553fe, type: 3}
-  - _level: Level3
-    _growthPoint: 6
+  - _level: level3
+    _miniGrowthPoint: 5
+    _maxGrowthPoint: 7
     _flower: {fileID: 21300000, guid: 57b62ecf38fd714479a146bc6508d4f4, type: 3}
-  - _level: Level4
-    _growthPoint: 10
+  - _level: level4
+    _miniGrowthPoint: 7
+    _maxGrowthPoint: 9
     _flower: {fileID: 21300000, guid: 2f9978445b542e04ea14d8f98628547e, type: 3}
-  - _level: Level5
-    _growthPoint: 15
+  - _level: level5
+    _miniGrowthPoint: 9
+    _maxGrowthPoint: 11
     _flower: {fileID: 21300000, guid: e446df9109223a0438b0084e18cdb1f3, type: 3}
-  - _level: Level6
-    _growthPoint: 21
+  - _level: level6
+    _miniGrowthPoint: 11
+    _maxGrowthPoint: 14
     _flower: {fileID: 21300000, guid: 3d0a7687698ead541a2de58916a9d60b, type: 3}
-  - _level: Level7
-    _growthPoint: 27
+  - _level: level7
+    _miniGrowthPoint: 14
+    _maxGrowthPoint: 17
     _flower: {fileID: 21300000, guid: b51ad2c4a59e49a46a1d574b9681d5c9, type: 3}
-  - _level: Level8
-    _growthPoint: 35
+  - _level: level8
+    _miniGrowthPoint: 17
+    _maxGrowthPoint: 20
     _flower: {fileID: 21300000, guid: cb2e786b78bb96c4d8b18ad78d1d66ae, type: 3}
   _growthPoint: 0
   _flowerPos: {fileID: 2865786549742805365}
   _rainTag: 
+  _soil: {fileID: 0}
   _flowerPotPrefab: {fileID: 4426274197689089741}
+  _interver: 0.1
 --- !u!50 &1976745098018944728
 Rigidbody2D:
   serializedVersion: 4
@@ -167,7 +177,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.546, y: 0.596}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -201,7 +211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4711986896806262595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0.15, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -248,7 +258,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 93d190b6b92165f4b87bba12c521d27d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
