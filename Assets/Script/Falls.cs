@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class Falls : MonoBehaviour
 {
-    public float speed;
-
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float time;
+    //
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
+            Destroy(gameObject);
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.Translate(Vector3.down * speed, Space.World);
     }
+       
+
 }
