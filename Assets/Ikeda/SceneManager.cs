@@ -22,7 +22,7 @@ public class SceneManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Destroy(gameObject);
+            Destroy(Instance);
         }
         Instance = this;
         DontDestroyOnLoad(this);
