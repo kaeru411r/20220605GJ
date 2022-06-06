@@ -48,4 +48,4 @@ MonoBehaviour:
   rightArea: 8
   leftArea: -8.45
   height: 8.45
-  maxCT: 2
+  maxCT: 1
