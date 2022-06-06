@@ -109,14 +109,18 @@ public class FlowerPotController : MonoBehaviour
     void ChengeFlowerPot()
     {
         if (Input.GetButtonDown("Jump"))
-        {          
+        {
             //新しい植木鉢をランダムな位置に生成
-            Instantiate(_flowerPot, new Vector2(Calculator.RandomFloat(_leftArea, _rightArea),_yPos), Quaternion.identity);
+            Instantiate(_flowerPot, new Vector3(Calculator.RandomFloat(_leftArea, _rightArea), _yPos, 10f), Quaternion.identity);
             _flowerPos.sprite = _soil;//土に変更
-            //成長しきったらスコアを追加
-            if(_level == _growth.Count)_score.AddFlowerScore();
+            //花が咲いたらスコアを追加
+            if (_level == _growth.Count - OFFSET - OFFSET || _level == _growth.Count - OFFSET)
+            {
+                _score.AddFlowerScore();
+            }
             _growthPoint = 0;//成長ポイントをリセット
             _level = 0;//レベルをリセット
+            _randomGrowthPoint = Calculator.RandomInt(_growth[0].MiniGrowthPoint, _growth[0].MaxGrowthPoint);
             //Random.Rangeをして必要なポイントを変えている
         }
     }

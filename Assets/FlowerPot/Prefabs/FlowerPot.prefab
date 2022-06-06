@@ -139,7 +139,7 @@ MonoBehaviour:
     _miniGrowthPoint: 17
     _maxGrowthPoint: 20
     _flower: {fileID: 21300000, guid: cb2e786b78bb96c4d8b18ad78d1d66ae, type: 3}
-    _score: 1
+    _score: 0
   _growthPoint: 0
   _flowerPos: {fileID: 2865786549742805365}
   _rainTag: Rain
