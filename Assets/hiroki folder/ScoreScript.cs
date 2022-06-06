@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
-    int m_score;
-    int m_flowerScore = 0;
+   static int m_score;
+   static int m_flowerScore = 0;
     Text m_scoreText=default;
-    
+
+    public static int Score { get => m_score;  }
+    public static int FlowerScore { get => m_flowerScore; }
+
 
     // Start is called before the first frame update
     public void AddScore(int score)
@@ -21,6 +24,9 @@ public class ScoreScript : MonoBehaviour
     }
     void Start()
     {
+        m_score = 0;
+        m_flowerScore = 0;
+
         m_scoreText = GetComponent<Text>();
     }
 
