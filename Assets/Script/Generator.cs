@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
+    static Generator _instance;
+    public static Generator Instance { get { return _instance; } }
+
     [SerializeField] GameObject fall;
     [SerializeField] float rightArea;
     [SerializeField] float leftArea;
     [SerializeField] float height;
     [SerializeField] float maxCT;
+    [SerializeField] float moreRainFact;
     float coolTime = 0;
     private bool isPlay;
+
+    private void Awake()
+    {
+        _instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -58,5 +67,10 @@ public class Generator : MonoBehaviour
     public void OnResume()
     {
         isPlay = true;
+    }
+
+    public void MoreRains()
+    {
+        maxCT /= moreRainFact;
     }
 }
