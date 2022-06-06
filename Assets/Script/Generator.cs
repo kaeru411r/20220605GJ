@@ -13,6 +13,8 @@ public class Generator : MonoBehaviour
     [SerializeField] float height;
     [SerializeField] float maxCT;
     [SerializeField] float moreRainFact;
+
+    float rainsFact = 1;
     float coolTime = 0;
     private bool isPlay;
 
@@ -52,7 +54,7 @@ public class Generator : MonoBehaviour
             {
                 float x = Random.Range(leftArea, rightArea);
                 Instantiate(fall, new Vector3(x, height), Quaternion.identity);
-                coolTime = Random.Range(0, maxCT);
+                coolTime = Random.Range(0, maxCT * rainsFact);
             }
             
             
@@ -71,6 +73,11 @@ public class Generator : MonoBehaviour
 
     public void MoreRains()
     {
-        maxCT /= moreRainFact;
+        rainsFact /= moreRainFact;
+    }
+
+    public void RainsFactReset()
+    {
+        rainsFact = 1;
     }
 }

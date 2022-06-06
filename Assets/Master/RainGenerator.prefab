@@ -49,3 +49,4 @@ MonoBehaviour:
   leftArea: -8.45
   height: 8.45
   maxCT: 1
+  moreRainFact: 1.2
