@@ -10,10 +10,12 @@ public class SceneManager : MonoBehaviour
 
     /// <summary>タイトルシーン</summary>
     int _titleScene = 0;
+    /// <summary>説明シーン</summary>
+    int _informationScene = 1;
     /// <summary>ゲームシーン</summary>
-    int _gameScene = 1;
+    int _gameScene = 2;
     /// <summary>リザルトシーン</summary>
-    int _resultScene = 2;
+    int _resultScene = 3;
     /// <summary>現在のシーン</summary>
     int _nowScene;
 
@@ -74,6 +76,14 @@ public class SceneManager : MonoBehaviour
             return;
         }
         SceneChange(_nowScene);
+    }
+
+    /// <summary>
+    /// 説明用のシーンをロード
+    /// </summary>
+    public void Information()
+    {
+        SceneChange(_informationScene);
     }
 
     /// <summary>

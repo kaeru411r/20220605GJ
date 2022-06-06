@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Master/Title 1.unity
     guid: 2b07f9896cecb4341b6808fe061717bc
   - enabled: 1
+    path: Assets/hiroki folder/RuleScene.unity
+    guid: f2d9afdb8331f9b4b95dc18a289131af
+  - enabled: 1
     path: Assets/Master/GameScene 1.unity
     guid: b54f367e1cb100248a4f895cc5036a5e
   - enabled: 1
