@@ -25,6 +25,7 @@ public class GameManeger
     /// </summary>
     public IEnumerator GameStart()
     {
+        _isPause = false;
         yield return null;
         GameObject.FindObjectOfType<TimerScript>().TimerStart();
         var go = GameObject.FindObjectOfType<Generator>();

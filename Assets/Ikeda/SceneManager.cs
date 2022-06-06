@@ -27,7 +27,12 @@ public class SceneManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(this);
     }
-    
+
+    private void Start()
+    {
+        _nowScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+    }
+
     private void Aw()
     {
     }
@@ -45,7 +50,6 @@ public class SceneManager : MonoBehaviour
     /// </summary>
     public void GameScene()
     {
-        Debug.Log(_gameScene);
         SceneChange(_gameScene);
         StartCoroutine( GameManeger.Instance.GameStart());
     }
@@ -65,6 +69,7 @@ public class SceneManager : MonoBehaviour
     {
         if (_nowScene == _gameScene)
         {
+            Debug.Log(1);
             GameScene();
             return;
         }
