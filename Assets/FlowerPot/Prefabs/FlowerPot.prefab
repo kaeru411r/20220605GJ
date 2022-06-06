@@ -151,8 +151,8 @@ MonoBehaviour:
   _rightArea: -8
   _yPos: -3.2
   _xPos: -6
-  _potCountLimit: 7
-  _space: 2
+  _potCountLimit: 14
+  _space: 1
 --- !u!61 &1976745098018944729
 BoxCollider2D:
   m_ObjectHideFlags: 0
