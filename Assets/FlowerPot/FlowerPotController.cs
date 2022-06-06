@@ -75,16 +75,16 @@ public class FlowerPotController : MonoBehaviour
 
     /// <summary>プレイヤー</summary>
     GameObject _player;
+    /// <summary>スコアのスクリプト</summary>
+    ScoreScript _score;
     /// <summary>現在の花の成長レベル</summary>
     int _level;
     /// <summary>成長に必要なランダムなポイント</summary>
     int _randomGrowthPoint;
-    /// <summary>調整する</summary>
-    const int OFFSET = 1;
-    /// <summary>スコア</summary>
-    ScoreScript _score;
     /// <summary>置いた植木鉢の数</summary>
     int _potCount;
+    /// <summary>調整する</summary>
+    const int OFFSET = 1;
 
     Collider2D _collider;
 
@@ -144,6 +144,8 @@ public class FlowerPotController : MonoBehaviour
             if (_level == _growth.Count - OFFSET - OFFSET || _level == _growth.Count - OFFSET)
             {
                 _score.AddFlowerScore();
+                //蝶々だったら
+                if(_level == _growth.Count - OFFSET)Generator.Instance.MoreRains();//降水量を変更
             }
             _growthPoint = 0;//成長ポイントをリセット
             _level = 0;//レベルをリセット
