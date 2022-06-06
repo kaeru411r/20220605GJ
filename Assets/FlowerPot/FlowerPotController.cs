@@ -147,6 +147,8 @@ public class FlowerPotController : MonoBehaviour
                 //蝶々だったら
                 if(_level == _growth.Count - OFFSET)Generator.Instance.MoreRains();//降水量を変更
             }
+            //枯れたら
+            if (_level == _growth.Count) Generator.Instance.RainsFactReset();//降水量をリセット
             _growthPoint = 0;//成長ポイントをリセット
             _level = 0;//レベルをリセット
             _randomGrowthPoint = Calculator.RandomInt(_growth[0].MiniGrowthPoint, _growth[0].MaxGrowthPoint);
