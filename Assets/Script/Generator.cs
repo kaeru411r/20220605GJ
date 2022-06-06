@@ -21,6 +21,18 @@ public class Generator : MonoBehaviour
         isPlay = true;
     }
 
+    private void OnEnable()
+    {
+        GameManeger.Instance._OnPause += OnPause;
+        GameManeger.Instance._OnResume += OnResume;
+    }
+
+    private void OnDisable()
+    {
+        GameManeger.Instance._OnPause -= OnPause;
+        GameManeger.Instance._OnResume -= OnResume;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -36,5 +48,15 @@ public class Generator : MonoBehaviour
             
             
         }
+    }
+
+    public void OnPause()
+    {
+        isPlay=false;
+    }
+
+    public void OnResume()
+    {
+        isPlay = true;
     }
 }

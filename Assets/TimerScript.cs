@@ -14,6 +14,18 @@ public class TimerScript : MonoBehaviour
     {
         m_timeText = GetComponent<Text>();
     }
+    private void OnEnable()
+    {
+        GameManeger.Instance._OnPause += OnPause;
+        GameManeger.Instance._OnResume += OnResume;
+    }
+
+    private void OnDisable()
+    {
+        GameManeger.Instance._OnPause -= OnPause;
+        GameManeger.Instance._OnResume -= OnResume;
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -31,6 +43,16 @@ public class TimerScript : MonoBehaviour
 
 
     public void TimerStart()
+    {
+        _isPlay = true;
+    }
+
+    public void OnPause()
+    {
+        _isPlay = false;
+    }
+
+    public void OnResume()
     {
         _isPlay = true;
     }

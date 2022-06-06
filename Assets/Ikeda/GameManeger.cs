@@ -1,11 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameManeger
 {
     /// <summary>ゲームマネージャーのスタティックインスタンス</summary>
     static public GameManeger Instance = new GameManeger();
+
+    /// <summary>ポーズ時に呼ぶ関数のAction</summary>
+    public Action _OnPause;
+    /// <summary>ポーズ解除時に呼ぶ関数のAction</summary>
+    public Action _OnResume;
+    /// <summary>ポーズ中かどうか</summary>
+    bool _IsPause;
+
+
 
     /// <summary>
     /// ゲームスタート時に呼ぶ
@@ -53,4 +63,20 @@ public class GameManeger
         UnityEngine.Application.Quit();
     }
 
+    /// <summary>
+    /// ポーズ時に呼ぶ
+    /// </summary>
+    public void Pause()
+    {
+        if (!_IsPause)
+        {
+            _OnPause.Invoke();
+            _IsPause = true;
+        }
+        else
+        {
+            _OnResume.Invoke();
+            _IsPause = false;
+        }
+    }
 }
