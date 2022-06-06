@@ -59,6 +59,20 @@ public class FlowerPotController : MonoBehaviour
     [Header("Y軸")]
     float _yPos;
 
+    /// <summary>置き始める最初の位置</summary>
+    [SerializeField]
+    [Header("置き始める最初の位置")]
+    float _xPos = -6;
+
+    /// <summary>定位置に置ける数の限界</summary>
+    [SerializeField]
+    [Header("定位置に置ける数の限界")]
+    int _potCountLimit = 12;
+
+    [SerializeField]
+    [Header("定位置に置くときの植木鉢の間隔")]
+    int _space = 2;
+
     /// <summary>プレイヤー</summary>
     GameObject _player;
     /// <summary>現在の花の成長レベル</summary>
@@ -69,6 +83,8 @@ public class FlowerPotController : MonoBehaviour
     const int OFFSET = 1;
     /// <summary>スコア</summary>
     ScoreScript _score;
+    /// <summary>置いた植木鉢の数</summary>
+    int _potCount;
 
     Collider2D _collider;
 
@@ -76,6 +92,7 @@ public class FlowerPotController : MonoBehaviour
     {
         _player = GameObject.FindWithTag(_playerTag);
         _score = FindObjectOfType<ScoreScript>();
+
         if(gameObject.transform.IsChildOf(_player.transform))
         {
             _randomGrowthPoint = Calculator.RandomInt(_growth[0].MiniGrowthPoint, _growth[0].MaxGrowthPoint);
@@ -110,8 +127,18 @@ public class FlowerPotController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            //新しい植木鉢をランダムな位置に生成
-            Instantiate(_flowerPot, new Vector3(Calculator.RandomFloat(_leftArea, _rightArea), _yPos, 10f), Quaternion.identity);
+            //置いた植木鉢の数が少なかったら
+            if(_potCount < _potCountLimit)
+            {
+                Instantiate(_flowerPot, new Vector3(_xPos, _yPos, 10f), Quaternion.identity);
+                _xPos += _space;
+                _potCount++;
+            }
+            else
+            {
+                //新しい植木鉢をランダムな位置に生成
+                Instantiate(_flowerPot, new Vector3(Calculator.RandomFloat(_leftArea, _rightArea), _yPos, 10f), Quaternion.identity);
+            }
             _flowerPos.sprite = _soil;//土に変更
             //花が咲いたらスコアを追加
             if (_level == _growth.Count - OFFSET - OFFSET || _level == _growth.Count - OFFSET)
