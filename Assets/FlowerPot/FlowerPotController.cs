@@ -130,14 +130,14 @@ public class FlowerPotController : MonoBehaviour
             //置いた植木鉢の数が少なかったら
             if(_potCount < _potCountLimit)
             {
-                Instantiate(_flowerPot, new Vector3(_xPos, _yPos, 10f), Quaternion.identity);
+                Instantiate(_flowerPot, new Vector2(_xPos, _yPos), Quaternion.identity);
                 _xPos += _space;
                 _potCount++;
             }
             else
             {
                 //新しい植木鉢をランダムな位置に生成
-                Instantiate(_flowerPot, new Vector3(Calculator.RandomFloat(_leftArea, _rightArea), _yPos, 10f), Quaternion.identity);
+                Instantiate(_flowerPot, new Vector2(Calculator.RandomFloat(_leftArea, _rightArea), _yPos), Quaternion.identity);
             }
             _flowerPos.sprite = _soil;//土に変更
             //花が咲いたらスコアを追加
