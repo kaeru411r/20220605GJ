@@ -9,7 +9,7 @@ public class ScoreScript : MonoBehaviour
    static int m_flowerScore = 0;
     Text m_scoreText=default;
 
-    public static int Score { get => m_score;  }
+    public static int Score { get => m_score * (m_flowerScore + 1);  }
     public static int FlowerScore { get => m_flowerScore; }
 
 
@@ -33,6 +33,6 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_scoreText.text =("score:"+ m_score.ToString());
+        m_scoreText.text =("score:"+ Score.ToString());
     }
 }
