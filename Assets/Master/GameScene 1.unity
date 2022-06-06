@@ -949,6 +949,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2006154956792406498, guid: 257aed1cc55728841a7a14cbf96adc84, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006154956792406498, guid: 257aed1cc55728841a7a14cbf96adc84, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006154956792406498, guid: 257aed1cc55728841a7a14cbf96adc84, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1599.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006154956792406498, guid: 257aed1cc55728841a7a14cbf96adc84, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -990
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006154956792406498, guid: 257aed1cc55728841a7a14cbf96adc84, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -799.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006154956792406498, guid: 257aed1cc55728841a7a14cbf96adc84, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 493.04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 257aed1cc55728841a7a14cbf96adc84, type: 3}
 --- !u!1001 &7541706502286115960
