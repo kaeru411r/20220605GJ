@@ -137,7 +137,7 @@ public class FlowerPotController : MonoBehaviour
             _score.AddScore(_growth[_level].Point);//スコアを追加
             //Random.Rangeをして必要なポイントを変えている
             _randomGrowthPoint = Calculator.RandomInt(_growth[_level].MiniGrowthPoint, _growth[_level].MaxGrowthPoint);
-            if(_level < _growth.Count - OFFSET)_level++;//レベルを上げる
+            /*if(_level < _growth.Count - OFFSET && _switch)*/_level++;//レベルを上げる
         }
     }
 
