@@ -68,15 +68,14 @@ public class FlowerPotController : MonoBehaviour
     /// <summary>調整する</summary>
     const int OFFSET = 1;
     /// <summary>スコア</summary>
-    ScoreScript _score = new ScoreScript();
+    ScoreScript _score;
 
     Collider2D _collider;
-
-    float _timer;
 
     void Start()
     {
         _player = GameObject.FindWithTag(_playerTag);
+        _score = FindObjectOfType<ScoreScript>();
         if(gameObject.transform.IsChildOf(_player.transform))
         {
             _randomGrowthPoint = Calculator.RandomInt(_growth[0].MiniGrowthPoint, _growth[0].MaxGrowthPoint);
@@ -84,7 +83,7 @@ public class FlowerPotController : MonoBehaviour
         else
         {
             _collider = GetComponent<Collider2D>();
-            _collider.isTrigger = true;
+            Destroy(_collider.GetComponent<BoxCollider2D>());
         }
     }
 
@@ -92,21 +91,18 @@ public class FlowerPotController : MonoBehaviour
     {
         if (gameObject.transform.IsChildOf(_player.transform))
         {
-            _timer += Time.deltaTime;
             //クールダウンが終わったら
-            if(_timer > _interver)ChengeFlowerPot();
+            ChengeFlowerPot();
         }
-
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if(gameObject.transform.IsChildOf(_player.transform))
+        if (gameObject.transform.IsChildOf(_player.transform))
         {
             //雨に触れたら
-            //if (collision.gameObject.tag == _rainTag) Growth();
-            Growth();     
-        }       
+            if (collision.gameObject.tag == _rainTag) Growth();
+        }
     }
 
     /// <summary>植木鉢を変える</summary>
@@ -122,7 +118,6 @@ public class FlowerPotController : MonoBehaviour
             _growthPoint = 0;//成長ポイントをリセット
             _level = 0;//レベルをリセット
             //Random.Rangeをして必要なポイントを変えている
-            _timer = 0;
         }
     }
 
