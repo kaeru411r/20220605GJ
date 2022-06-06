@@ -891,6 +891,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2006154955250116718, guid: 257aed1cc55728841a7a14cbf96adc84, type: 3}
+      propertyPath: m_limitTime
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 2006154956781813381, guid: 257aed1cc55728841a7a14cbf96adc84, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1121,6 +1125,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RainGenerator
       objectReference: {fileID: 0}
+    - target: {fileID: 7541706503386386581, guid: a4e87944ec207544d9962b64e3c09656, type: 3}
+      propertyPath: maxCT
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541706503386386581, guid: a4e87944ec207544d9962b64e3c09656, type: 3}
+      propertyPath: moreRainFact
+      value: 1.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7541706503386386582, guid: a4e87944ec207544d9962b64e3c09656, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1174,6 +1186,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7698763438881856372, guid: 0d74216b6a9e82c419c0b4f3580a293a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698763438881856372, guid: 0d74216b6a9e82c419c0b4f3580a293a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698763438881856372, guid: 0d74216b6a9e82c419c0b4f3580a293a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698763438881856372, guid: 0d74216b6a9e82c419c0b4f3580a293a, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8537333682586249843, guid: 0d74216b6a9e82c419c0b4f3580a293a, type: 3}
       propertyPath: m_Name
       value: Untitled-removebg-preview
@@ -1183,12 +1211,24 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8537333682586249844, guid: 0d74216b6a9e82c419c0b4f3580a293a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537333682586249844, guid: 0d74216b6a9e82c419c0b4f3580a293a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537333682586249844, guid: 0d74216b6a9e82c419c0b4f3580a293a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537333682586249844, guid: 0d74216b6a9e82c419c0b4f3580a293a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8537333682586249844, guid: 0d74216b6a9e82c419c0b4f3580a293a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6
+      value: -2.86
       objectReference: {fileID: 0}
     - target: {fileID: 8537333682586249844, guid: 0d74216b6a9e82c419c0b4f3580a293a, type: 3}
       propertyPath: m_LocalPosition.z
