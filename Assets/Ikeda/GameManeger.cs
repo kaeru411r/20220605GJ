@@ -63,7 +63,9 @@ public class GameManeger
     /// </summary>
     public void CloseApplication()
     {
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
+#endif
         UnityEngine.Application.Quit();
     }
 
