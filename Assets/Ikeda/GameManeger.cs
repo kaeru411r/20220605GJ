@@ -13,7 +13,10 @@ public class GameManeger
     /// <summary>ポーズ解除時に呼ぶ関数のAction</summary>
     public Action _OnResume;
     /// <summary>ポーズ中かどうか</summary>
-    bool _IsPause;
+    bool _isPause;
+
+    /// <summary>ポーズ中かどうか</summary>
+    public bool IsPause { get => _isPause; }
 
 
 
@@ -68,15 +71,15 @@ public class GameManeger
     /// </summary>
     public void Pause()
     {
-        if (!_IsPause)
+        if (!_isPause)
         {
             _OnPause.Invoke();
-            _IsPause = true;
+            _isPause = true;
         }
         else
         {
             _OnResume.Invoke();
-            _IsPause = false;
+            _isPause = false;
         }
     }
 }
