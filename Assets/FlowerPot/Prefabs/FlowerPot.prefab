@@ -144,10 +144,13 @@ MonoBehaviour:
   _growthPoint: 0
   _flowerPos: {fileID: 2865786549742805365}
   _rainTag: 
+  _playerTag: Player
   _flowerPot: {fileID: 4426274197689089741}
   _soil: {fileID: 21300000, guid: 93d190b6b92165f4b87bba12c521d27d, type: 3}
   _interver: 0.1
-  _player: {fileID: 0}
+  _leftArea: 8
+  _rightArea: -8
+  _yPos: -3
 --- !u!50 &1976745098018944728
 Rigidbody2D:
   serializedVersion: 4

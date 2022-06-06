@@ -6,9 +6,6 @@ using GJ.Calculation;
 
 public class FlowerPotController : MonoBehaviour
 {
-    ///// <summary>スコアのプロパティ</summary>
-    //public int Score => _score;
-
     /// <summary>成長するのに必要なもの</summary>
     [SerializeField]
     [Header("成長するのに必要なもの")]
@@ -29,6 +26,10 @@ public class FlowerPotController : MonoBehaviour
     [Header("雨のTag")]
     string _rainTag;
 
+    [SerializeField]
+    [Header("プレイヤーのTag")]
+    string _playerTag = "Player";
+
     /// <summary>植木鉢</summary>
     [SerializeField]
     [Header("植木鉢")]
@@ -42,11 +43,6 @@ public class FlowerPotController : MonoBehaviour
     [SerializeField]
     [Header("植木鉢を変えるクールダウン")]
     float _interver = 0.1f;
-
-    /// <summary>プレイヤー</summary>
-    [SerializeField]
-    [Header("プレイヤー")]
-    GameObject _player;
 
     /// <summary>左の範囲</summary>
     [SerializeField]
@@ -63,6 +59,8 @@ public class FlowerPotController : MonoBehaviour
     [Header("Y軸")]
     float _yPos;
 
+    /// <summary>プレイヤー</summary>
+    GameObject _player;
     /// <summary>現在の花の成長レベル</summary>
     int _level;
     /// <summary>成長に必要なランダムなポイント</summary>
@@ -78,7 +76,7 @@ public class FlowerPotController : MonoBehaviour
 
     void Start()
     {
-        
+        _player = GameObject.FindWithTag(_playerTag);
         if(gameObject.transform.IsChildOf(_player.transform))
         {
             _randomGrowthPoint = Calculator.RandomInt(_growth[0].MiniGrowthPoint, _growth[0].MaxGrowthPoint);
@@ -101,20 +99,20 @@ public class FlowerPotController : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if(gameObject.transform.IsChildOf(_player.transform))
         {
             //雨に触れたら
             //if (collision.gameObject.tag == _rainTag) Growth();
             Growth();     
-        }
+        }       
     }
 
     /// <summary>植木鉢を変える</summary>
     void ChengeFlowerPot()
     {
-        if (Input.GetButton("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {          
             //新しい植木鉢をランダムな位置に生成
             Instantiate(_flowerPot, new Vector2(Calculator.RandomFloat(_leftArea, _rightArea),_yPos), Quaternion.identity);
